@@ -1,0 +1,36 @@
+UC1 - create database -> 
+create database AddressBookService;
+
+
+UC2 -> create table of addressBook;
+create table AddressBook (FirstName varchar(150) , lastName varchar(150) , address varchar(150), city varchar(30) , state varchar(30) , zipCode int , phoneNumber bigint , email varchar(50) );  
+
+
+uc3 -> insert new contact in addressBook ;
+insert into addressbook value ('Monika','Mhaske','Karvenagar', 'pune','maharashtra',8830503111,'monikamhaske46@gmail.com');
+
+uc4 -> abitlity to edit 
+update addressbook set address = 'Karvenagar' where FirstName = 'Monika';
+
+uc5 -> ability to delete contact;
+delete from addressbook where FirstName = 'Monika'; 
+
+uc6 -> ability to retrive person belong to city or state;
+select * from addressbook where state = 'maharashtra' and city = 'pune';
+
+uc7 -> ability to select contact
+select count(city) from addressbook where state = 'maharashtra' and city = 'Pune';
+
+uc8 -> sort by firstName
+select * from addressbook where city = 'Pune' order by FirstName;
+
+uc 9 -> alter table to add type ;
+alter table addressbook add type varchar(50) after lastName;
+
+uc 10 ->grt count by type;
+select count(FirstName) from addressbook where type = 'Family' ;
+
+uc 11 -> to add in both family & friend
+insert into addressbook value ('Monika','Mhaske', 'Family','karvenagar', 'Pune','maharashtra',431103,8830503111,'monikamhaske46@gmail.com');
+
+insert into addressbook value ('Monika','Mhaske', 'Frined','Karvenagar', 'Pune','maharashtra',431103,8830503111,'monikamhaske46@gmail.com');
